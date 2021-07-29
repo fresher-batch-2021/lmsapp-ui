@@ -1,0 +1,25 @@
+.div{
+    background-color: rgb(67, 195, 250);
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-bottom: 65px;
+    width: 100%;    
+}
+
+.div1{
+    background-color: rgb(226,226,226);
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    border : 2px grey;
+    border-radius : 50px 20px;
+    width: 100%;    
+}
+
+header {
+    background-color: #364150; 
+    color:white;
+    padding:10px;
+}
