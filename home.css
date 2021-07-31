@@ -1,0 +1,16 @@
+.company-title{
+    width: 80%;
+    margin-top: 10px;
+    margin-left: 0px;
+    padding-left: 10px;
+    border: 2px solid rgb(195,195,195);
+    border-radius: 10px 10px;
+}
+.home-content{
+    width : 80%;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    border: 2px solid rgb(195,195,195);
+    border-radius: 10px 10px;
+}
