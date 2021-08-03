@@ -35,13 +35,13 @@
                         </h2>
                     </div>
                     <br/>
-                    <form action="login.html">
+                    <form action="login.html" onsubmit="registration()">
                         <div class="input-group mb-6">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
                                     <img style="width : 40px; height:40px; position: relative;" src="./images/user.png"> </span>
                             </div>
-                            <input style="width :150px; height : 50px; font-size : 16px;;" name="" class="form-control" placeholder="Full name" type="text">
+                            <input style="width :150px; height : 50px; font-size : 16px;" id="name" class="form-control" placeholder="Full name" type="text">
                         </div>
                         <br/>
                         <div class="input-group mb-6">
@@ -49,7 +49,7 @@
                                 <span class="input-group-text">
                                     <img style="width : 40px; height:40px; position: relative;" src="./images/badge.png"> </span>
                             </div>
-                            <input style="width :200px; height : 50px; font-size : 16px;" name="" class="form-control" placeholder="Employee ID" type="text">
+                            <input style="width :200px; height : 50px; font-size : 16px;" id = "empId" class="form-control" placeholder="Employee ID" type="text">
                         </div>
                         <br/>
                         <div class="input-group mb-6">
@@ -57,7 +57,7 @@
                                 <span class="input-group-text">
                                     <img style="width : 40px; height:40px; position: relative;" src="./images/group.png"> </span>
                             </div>
-                            <input style="width :200px; height : 50px; font-size : 16px;" name="" class="form-control" placeholder="Team Name" type="text">
+                            <input style="width :200px; height : 50px; font-size : 16px;" id = "teamName" class="form-control" placeholder="Team Name" type="text">
                         </div>
                         <br/>
                         <div class="input-group mb-6">
@@ -65,7 +65,7 @@
                                 <span class="input-group-text">
                                     <img style="width : 40px; height:40px; position: relative;" src="./images/smartphone.png"> </span>
                             </div>
-                            <input style="width :200px; height : 50px; font-size : 16px;" name="" class="form-control" placeholder="Mobile Number" type="text">
+                            <input style="width :200px; height : 50px; font-size : 16px;" id = "mobileNumber" class="form-control" placeholder="Mobile Number" type="text">
                         </div>
                         <br/>
                         <div class="input-group mb-6">
@@ -73,7 +73,7 @@
                                 <span class="input-group-text">
                                     <img style="width : 40px; height:40px; position: relative;" src="./images/envelope.png"> </span>
                             </div>
-                            <input style="width :200px; height : 50px; font-size : 16px;" name="" class="form-control" placeholder="Email Address" type="text">
+                            <input style="width :200px; height : 50px; font-size : 16px;" id = "emailAddress" class="form-control" placeholder="Email Address" type="text">
                         </div>
                         <br/>
                         <div class="input-group mb-6">
@@ -81,11 +81,33 @@
                                 <span class="input-group-text">
                                     <img style="width : 40px; height:40px; position: relative;" src="./images/padlock.png"> </span>
                             </div>
-                            <input style="width :200px; height : 50px; font-size : 16px;" name="" class="form-control" placeholder="Password" type="password">
+                            <input style="width :200px; height : 50px; font-size : 16px;" id = "password" class="form-control" placeholder="Password" type="password">
                         </div>
                         <br/>
                         <input type="submit" class="form-control" style="font-size : 16px" value="Register">
                     </form>
+                    <script>
+                        function registration(){
+                            event.preventDefault();
+                            const name = document.querySelector("#name").value;
+                            const empId = document.querySelector("#empId").value;
+                            const teamName = document.querySelector("#teamName").value;
+                            const mobileNumber = document.querySelector("#mobileNumber").value;
+                            const emailAddress = document.querySelector("#emailAddress").value;
+                            const password = document.querySelector("#password").value;
+
+                            const jsonObj = {
+                                "name" : name,
+                                "empId" : empId,
+                                "teamName" : teamName,
+                                "mobileNumber" : mobileNumber,
+                                "emailAddress" : emailAddress,
+                                "password" : password
+                            }
+                            console.log(jsonObj);
+                            window.location.href="login.html";
+                        }
+                    </script>
                 </div>
             </div>
         </div>

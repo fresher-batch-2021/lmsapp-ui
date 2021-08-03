@@ -1,5 +1,5 @@
 .status-title{
-    width : 80%;
+    width : 95%;
     margin-top: 10px;
     padding-left : 10px;
     padding-right: 10px;
@@ -10,7 +10,7 @@
 }
 
 .status-content{
-    width : 80%;
+    width : 95%;
     margin-top: 10px;
     padding-left : 10px;
     padding-right: 10px;
@@ -21,6 +21,9 @@
 }
 
 table{
-    width : 80%;
+    width : 100%;
     font-size: 18px;
+}
+tr{
+    height: 50px;
 }

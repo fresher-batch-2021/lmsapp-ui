@@ -1,19 +1,24 @@
 .title-box{
     margin-top: 10px;
     padding-left: 15px;
-    width : 80%;
+    width : 95%;
     border: 2px solid rgb(195,195,195);
     border-radius: 10px 10px;
 }
 
 .history-table{
     margin-top: 30px;
-    padding-left: 15px;
-    width : 80%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    width : 95%;
     border: 2px solid rgb(195,195,195);
     border-radius: 10px 10px;
 }
 table{
-    width : 80%;
+    width : 100%;
     font-size: 18px;
+}
+tr{
+    height: 50px;
 }
