@@ -34,7 +34,7 @@
                             <label>Employee ID : </label>
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" name="empID" id = "employeeId" style="width : 250px; font-size : 14px;" class="form-control box-style">
+                            <input type="text" required name="empID" id = "employeeId" style="width : 250px; font-size : 14px;" class="form-control box-style">
                             <br/>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
                             <label>From Date : </label>
                         </div>
                         <div class="col-sm-6">
-                            <input type="date" id="fromDate" style="width : 250px; font-size : 14px;" class="form-control box-style">
+                            <input type="date" required id="fromDate" style="width : 250px; font-size : 14px;" class="form-control box-style">
                             <br/>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                             <label>To Date : </label>
                         </div>
                         <div class="col-sm-8">
-                            <input type="date" id="toDate" style="width : 250px; font-size : 14px;" class="form-control box-style">
+                            <input type="date" required id="toDate" style="width : 250px; font-size : 14px;" class="form-control box-style">
                             <br/>
                         </div>
                     </div>
@@ -64,7 +64,12 @@
                             <label>Leave Type : </label>
                         </div>
                         <div class="col-sm-8">
-                            <input type="text" id="type" style="width : 250px; font-size : 14px;" class="form-control box-style">
+                            <select required id="type" style="width : 250px; font-size : 14px;" class="form-control box-style">
+                                <option value = "">--select--</option>
+                                <option value = "sickLeave">Sick Leave</option>
+                                <option value = "casualLeave">Casual Leave</option>
+                            </select>
+                    
                             <br/>
                         </div>
                     </div>
@@ -74,7 +79,7 @@
                             <label>Reason : </label>
                         </div>
                         <div class="col-sm-8">
-                            <input type="text" id="reason" style="width : 250px; font-size : 14px;" class="form-control box-style">
+                            <input type="text" required id="reason" style="width : 250px; font-size : 14px;" class="form-control box-style">
                             <br/>
                         </div>
                     </div>
@@ -104,8 +109,9 @@
                             "reason" : reason
                         }
                         console.log(leaveFormObj);
+                        window.location.href="history.html";
                     }
-                    window.location.href="history.html";
+                    
                 </script>
             </div>
         </div>

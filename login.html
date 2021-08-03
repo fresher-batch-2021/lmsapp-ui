@@ -4,53 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <link rel="stylesheet" href="row_col.css">
     <link rel="stylesheet" href="login.css">
-
     <title>LMS - LOGIN</title>
 </head>
 
 <body>
     <div class="div">
         <div class="div1">
+            <center>
+                <h1>
+                    <i>LMS - APP</i>
+                </h1>
+            </center>
             <div class="row">
-                <center>
-                    <h1>
-                        <i>LMS - APP</i>
-                    </h1>
-                </center>
+
                 <div class="col-sm-6" style="padding-left : 80px;padding-top : 30px;">
-                    <img style="width : 70%; height:70%" src="./images/login-pic.jpg">
+                    <img style="width : 70%; height:80%" src="./images/login-pic.jpg">
                 </div>
-                <div class="col-sm-6" style="padding-left : 80px; padding-top : 30px;">
+                <div class="col-sm-6" style="padding-left : 80px; padding-top : 10px;">
                     <h2 style="padding-left : 80px;">Sign In..</h2>
-                    <br/>
                     <form onsubmit="login()">
                         <label for="username">Username</label>
                         <br/>
-                        <input style=" width : 50%;" id="userName" type="text" class="form-control">
+                        <input style=" width : 50%;" id="userName" type="text" class="box-style">
+                        <br/>
                         <br/>
                         <label for="password">Password</label>
                         <br/>
-                        <input style=" width : 50%;" id="password" type="text" class="form-control">
+                        <input style=" width : 50%;" id="password" type="password" class="box-style">
                         <br/>
-                        <label>Role</label>
-                        <select class="form-control" id = "role" style="width:50%;" name="role">
-                            <option value = "">--select--</option>
+                        <br/>
+                        <label>User Role</label>
+                        <br/>
+                        <select class="box-style" id="role" style="width:50%;" name="role">
+                            <option value="">--select--</option>
                             <option value="Employee">Employee</option>
                             <option value="HR">HR</option>
                         </select>
                         <br/>
-                        <div style="padding-left : 80px;">
-                            <input style=" width : 25%;" type="submit" class="btn btn-success">
+                        <br/>
+                        <div style="padding-left : 70px;">
+                            <input style=" width : 25%;" type="submit" class="btn btn-style">
                             <br/>
                         </div>
                         <br/>
-                        <a href="registration.html" style="padding-left : 55px;">New User - Register here!</a>
+                        <a href="registration.html" style="padding-left : 35px;">New User - Register here!</a>
                     </form>
                     <script>
                         function login() {
@@ -59,51 +59,32 @@
                             const password = document.querySelector("#password").value;
                             const role = document.querySelector("#role").value;
                             const loginObj = {
-                                "userName" : userName,
-                                "password" : password,
-                                "role" : role
+                                "userName": userName,
+                                "password": password,
+                                "role": role
                             }
                             console.log(loginObj);
-                            if(userName == null || userName == "" || userName.trim() == "")
-                            {
+                            let allFielsAreOk = 0;
+                            if (userName == null || userName == "" || userName.trim() == "") {
                                 alert("Username is Invalid");
                             }
-                            else if(password == null || password == "" || password.trim() == "" || password.length > 8 || password.length < 8)
-                            {
+                            else if (password == null || password == "" || password.trim() == "" || password.length > 8 || password.length < 8) {
                                 alert("password is Invalid");
                             }
-                            else if(password != null){
-                                let numCheck = 0;
-                                let charCheck = 0;
-                                let capsCheck = 0;
-                                for(i = 0; i < password.length; i++){
-                                    if(password[i] >= "A" && password[i] <= "Z"){
-                                        capsCheck = 1;
-                                    } 
-                                    if(password[i] >= "a" && password[i] <= "z"){
-                                        charCheck = 1;
-                                    }
-                                    if(parseInt(password[i]) >= 0 && parseInt(password[i]) <= 9){
-                                        numCheck = 1;
-                                    }
-                                }
-                                if (numCheck == 1 && charCheck == 1 && capsCheck == 1){
-                                    console.log("password checked");
-                                }
-                                else{
-                                    alert("Password must contains Atleast 1 number, 1 Capital Letter, 1 Character");
-                                }
-                            }
-                            else if(role == null || role == "" || role.trim() == "")
-                            {
+
+                            else if (role == null || role == "" || role.trim() == "") {
                                 alert("Role is Invalid");
                             }
-                            if(role === "Employee")
-                            {
-                                window.location.href="home.html";
+                            else {
+                                allFielsAreOk = 1;
                             }
-                            else{
-                                window.location.href="login.html";
+                            if (allFielsAreOk == 1) {
+                                if (role === "Employee") {
+                                    window.location.href = "home.html";
+                                }
+                                else if(role === "HR"){
+                                    window.location.href = "hrpage.html";
+                                }
                             }
                         }
                     </script>
