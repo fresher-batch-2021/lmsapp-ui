@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="registration.css">
     <link rel="stylesheet" href="row_col.css">
     <title>LMS - Registration</title>
@@ -17,10 +16,8 @@
     <div class="div">
         <div class="div1">
             <div class="row">
-                <div class="col-sm-6" style="padding-left : 150px; padding-top: 150px ">
-                    <img style="height: 80%; width: 60%;" src="./images/registration.png">
-                </div>
-                <div class="col-sm-4">
+                <div class = "col-sm-1"></div>
+                <div class="col-sm-11">
                     <div class="text-center">
                         <h2>
                             <i>User Registration</i>
@@ -98,7 +95,9 @@
                                 "emailAddress": emailAddress,
                                 "password": password
                             }
+
                             console.log(jsonObj);
+                            let passCheck = 0;
                             let allFieldsAreOk = 0;
                             if (name == null || name == "" || name.trim() == "") {
                                 alert("Name is Invalid");
@@ -135,6 +134,7 @@
                                 }
                                 if (numCheck == 1 && charCheck == 1 && capsCheck == 1) {
                                     console.log("password checked");
+                                    passCheck = 1;
                                 }
                                 else {
                                     alert("Password must contains Atleast 1 number, 1 Capital Letter, 1 Character");
@@ -142,7 +142,7 @@
                             } else {
                                 allFieldsAreOk = 1;
                             }
-                            if (allFieldsAreOk == 1) {
+                            if (passCheck == 1) {
                                 alert("Registration Success !!!");
                                 window.location.href = "index.html";
                             }

@@ -15,7 +15,6 @@
     border: 2px solid rgb(195,195,195);
     border-radius: 10px 10px;
     font-size: 14px;
-
 }
 
 .box-style{
@@ -38,7 +37,7 @@
 .btn1-style{
     border-radius: 20px 20px;
     border : 1px solid rgb(53, 47, 47);
-    background-color: rgb(28, 107, 28);
+    background-color: rgb(43, 146, 43);
     color : whitesmoke;
 
 }

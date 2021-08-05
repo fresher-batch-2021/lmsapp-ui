@@ -1,21 +1,25 @@
 .div{
-    background-color: rgb(141, 217, 250);
+    background-image: url(./images/login.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     padding-left: 75px;
-    padding-top: 30px;
+    padding-top: 50px;
     padding-right: 0px;
     padding-bottom: 65px;
     width: 95%;    
 }
 
 .div1{
-    background-color: rgb(226,226,226);
+    background-color:rgb(15,23,42);
     padding-left: 30px;
-    padding-top: 30px;
+    padding-top: 50px;
     padding-right: 30px;
     padding-bottom: 50px;
     border : 2px grey;
     border-radius : 50px 20px;
-    width: 85%;
+    width: 45%;
+    color : whitesmoke;
+    opacity: 0.7;
 }
 
 header {
@@ -31,9 +35,9 @@ header {
     
 }
 
-body{
-    /*background-image: url(./images/background.jpg);
-    background-repeat: no-repeat;*/
+a{
+    text-decoration: none;
+    color: whitesmoke;
 }
 
 .nav-item{
