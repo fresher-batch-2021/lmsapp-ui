@@ -16,17 +16,9 @@
     </div>
     <div class="hrpage-content">
         <main>
-        <table aria-describedby="mydesc">
-            <thead>
-                <tr>
-                    <th scope="col">#######</th>
-                    <th scope="col">#######</th>
-                    <th scope="col">#######</th>
-                </tr>
-            </thead>
-            <tbody id="application-forms"></tbody>
-        </table>
-    </main>
+            <div id = "application-forms">
+            </div>
+        </main>
         <!--<div class="application-form">
             <div class="row">
                 <div class="col-sm-4">
@@ -89,36 +81,7 @@
         </div>-->
     </div>
     <script src="js/jquery.min.js"></script>
-    <script>
-        function leaveApplications() {
-            let formObj = [
-                {
-                    name: "Renis",
-                    employeeId: "2855",
-                    team: "smart App",
-                    leaveDays: "08/08/2021",
-                    leaveType: "Sick Leave",
-                    reason: "Fever",
-                },
-                {
-                    name: "Casio",
-                    employeeId: "1448",
-                    team: "DataZap",
-                    leaveDays: "11/08/2021",
-                    leaveType: "Casual Leave",
-                    reason: "Function",
-                },
-            ];
-            let content = "";
-            for (let formObj of form) {
-                content = content + "<tr><td>"+ formObj.name +"</td><td>" + formObj.name + "</td><td>" + formObj.leaveDays + "</td></tr>";
-                //content = content +`<tr><td>${formObj.name}</td><td>${formObj.leaveDays}</td><td>${formObj.reason}</td></tr>`;
-            }
-            console.log("renis");
-            console.log(content);
-            document.querySelector("#application-forms").innerHTML = content;
-        }
-    </script>
+    <script src = "hrforms.js"></script>
 </body>
 
 </html>

@@ -37,7 +37,7 @@
                                 <span class="span-group3">
                                     <img style="width : 40px; height:40px; position: relative;" src="./images/badge.png" alt="empId logo"> </span>
                             </div>
-                            <input class="box1-style" id="empId" class="form-control" placeholder="Employee ID" type="text">
+                            <input class="box1-style" id="empId" placeholder="Employee ID" type="text">
                         </div>
                         <br/>
                         <div class="span-group">
@@ -45,7 +45,12 @@
                                 <span class="span-group3">
                                     <img style="width : 40px; height:40px; position: relative;" src="./images/group.png" alt="team logo"> </span>
                             </div>
-                            <input class="box1-style" id="teamName" class="form-control" placeholder="Team Name" type="text">
+                            <!-- <input class="box1-style" id="teamName" class="form-control" placeholder="Team Name" type="text"> -->
+                            <select id = "teamName" style="height: 45px;" class="box1-style">
+                                <option value="">--select--</option>
+                                <option value="employee">Employee</option>
+                                <option value="hr">HR</option>
+                            </select>
                         </div>
                         <br/>
                         <div class="span-group">
@@ -99,22 +104,22 @@
                             let passCheck = 0;
                             let allFieldsAreOk = 0;
                             if (name == null || name == "" || name.trim() == "") {
-                                alert("Name is Invalid");
+                                alert("Enter valid name");
                             }
                             else if (empId == null || empId == "" || empId.trim() == "") {
-                                alert("Employee ID is Invalid");
+                                alert("Enter valid Employee ID");
                             }
                             else if (teamName == null || teamName == "" || teamName.trim() == "") {
-                                alert("Team Name is Invalid");
+                                alert("Enter valid Role");
                             }
                             else if (mobileNumber == null || mobileNumber == "" || mobileNumber.trim() == "") {
-                                alert("Mobile Number is Invalid");
+                                alert("Enter valid Mobile number");
                             }
                             else if (emailAddress == null || emailAddress == "" || emailAddress.trim() == "") {
-                                alert("Team Name is Invalid");
+                                alert("Enter valid Email Address");
                             }
                             else if (password == null || password == "" || password.trim() == "" || password.length > 8 || password.length < 8) {
-                                alert("password is Invalid");
+                                alert("Must be 8 letters");
                             }
                             else if (password != null) {
                                 let numCheck = 0;
@@ -136,7 +141,7 @@
                                     passCheck = 1;
                                 }
                                 else {
-                                    alert("Password must contains Atleast 1 number, 1 Capital Letter, 1 Character");
+                                    alert("Password must contains Atleast 1 Number, 1 Upper Case, 1 Lower Case");
                                 }
                             } else {
                                 allFieldsAreOk = 1;

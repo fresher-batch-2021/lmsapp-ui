@@ -62,10 +62,10 @@
                             console.log(loginObj);
                             let allFielsAreOk = 0;
                             if (userName == null || userName == "" || userName.trim() == "") {
-                                alert("Username is Invalid");
+                                alert("Enter valid username");
                             }
                             else if (password == null || password == "" || password.trim() == "" || password.length > 8 || password.length < 8) {
-                                alert("password is Invalid");
+                                alert("Password Must be 8 letters");
                             }
 
                             else if (role == null || role == "" || role.trim() == "") {
