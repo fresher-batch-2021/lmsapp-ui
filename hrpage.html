@@ -1,18 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HR - page</title>
     <link rel="stylesheet" href="hrpage.css">
+    <link rel="stylesheet" href="row_col.css">
 </head>
+
 <body>
-    <div class = "hrpage-title">
+    <div class="hrpage-title">
         <h2>Leave Applications</h2>
     </div>
-    <div class = "hrpage-content">
-        <br/>
+    <div class="hrpage-content">
+        <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>#######</th>
+                    <th>#######</th>
+                    <th>#######</th>
+                </tr>
+            </thead>
+            <tbody id="application-forms"></tbody>
+        </table>
+    </main>
+        <!--<div class="application-form">
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Name : Renis Issac J</label><br />
+                    <label>Employee ID : 2855</label><br />
+                    <label>Team : Smart App</label><br />
+                </div>
+                <div class="col-sm-4">
+                    <label>Leave days : 08/08/2021</label><br />
+                    <label>Leave Type : Sick Leave</label><br />
+                    <label>Reason : Fever</label><br />
+                </div>
+                <div class="col-sm-4">
+                    <center>
+                        <input type="submit" class="btn1-style" value="Approve"><br />
+                        <input type="submit" class="btn2-style" value="Decline">
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div class="application-form">
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Name : Renis Issac J</label><br />
+                    <label>Employee ID : 2855</label><br />
+                    <label>Team : Smart App</label><br />
+                </div>
+                <div class="col-sm-4">
+                    <label>Leave days : 08/08/2021</label><br />
+                    <label>Leave Type : Sick Leave</label><br />
+                    <label>Reason : Fever</label><br />
+                </div>
+                <div class="col-sm-4">
+                    <center>
+                        <input type="submit" class="btn1-style" value="Approve"><br />
+                        <input type="submit" class="btn2-style" value="Decline">
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div class="application-form">
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Name : Renis Issac J</label><br />
+                    <label>Employee ID : 2855</label><br />
+                    <label>Team : Smart App</label><br />
+                </div>
+                <div class="col-sm-4">
+                    <label>Leave days : 08/08/2021</label><br />
+                    <label>Leave Type : Sick Leave</label><br />
+                    <label>Reason : Fever</label><br />
+                </div>
+                <div class="col-sm-4">
+                    <center>
+                        <input type="submit" class="btn1-style" value="Approve"><br />
+                        <input type="submit" class="btn2-style" value="Decline">
+                    </center>
+                </div>
+            </div>
+        </div>-->
     </div>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        function leaveApplications() {
+            let formObj = [
+                {
+                    name: "Renis",
+                    employeeId: "2855",
+                    team: "smart App",
+                    leaveDays: "08/08/2021",
+                    leaveType: "Sick Leave",
+                    reason: "Fever",
+                },
+                {
+                    name: "Casio",
+                    employeeId: "1448",
+                    team: "DataZap",
+                    leaveDays: "11/08/2021",
+                    leaveType: "Casual Leave",
+                    reason: "Function",
+                },
+            ];
+            let content = "";
+            for (let formObj of form) {
+                content = content + "<tr><td>"+ formObj.name +"</td><td>" + formObj.name + "</td><td>" + formObj.leaveDays + "</td></tr>";
+                //content = content +`<tr><td>${formObj.name}</td><td>${formObj.leaveDays}</td><td>${formObj.reason}</td></tr>`;
+            }
+            console.log("renis");
+            console.log(content);
+            document.querySelector("#application-forms").innerHTML = content;
+        }
+    </script>
 </body>
+
 </html>

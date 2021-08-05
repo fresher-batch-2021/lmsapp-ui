@@ -25,5 +25,22 @@ table{
     font-size: 18px;
 }
 tr{
+    height: 40px;
+}
+table{
+    width : 100%;
+    font-size: 18px;
+    border: 2px solid rgb(195,195,195);
+    border-radius: 5px 5px;
+}
+tr{
     height: 50px;
+    border: 2px solid rgb(195,195,195);
+}
+th{
+    background-color: rgb(162, 162, 247);
+    color: rgb(24, 23, 23);
+}
+tr:nth-child(odd){
+    background-color: rgb(190, 188, 188);
 }
