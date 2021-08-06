@@ -61,3 +61,7 @@ a{
     background-color: rgb(3, 63, 3);
     color: whitesmoke;
 }
+input:focus, select:focus{
+    box-shadow: 2px 2px 10px rgb(226, 213, 238);
+    border-color: rgb(76, 56, 94);
+}

@@ -1,0 +1,29 @@
+.title li{
+    background-color: rgb(99, 216, 105);
+    display: inline-block;
+}
+* {box-sizing: border-box;}
+.prev{
+    float: left;
+    text-align: center;
+}
+.month{
+    padding-left: 380px;
+    padding-right: 380px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 40px;
+}
+.next{
+    padding-left: 50px;
+    padding-right: 120px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 40px;
+}
+.weekdays li{
+    width : 13.6%;
+    display: inline-block;
+    background-color: gray;
+
+}

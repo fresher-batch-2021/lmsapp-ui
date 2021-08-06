@@ -24,17 +24,17 @@
                     <form onsubmit="login()">
                         <label for="username">Username</label>
                         <br />
-                        <input style=" width : 50%;" id="userName" type="text" class="box-style">
+                        <input style=" width : 50%;" id="userName" type="text" class="box-style" required>
                         <br />
                         <br />
                         <label for="password">Password</label>
                         <br />
-                        <input style=" width : 50%;" id="password" type="password" class="box-style">
+                        <input style=" width : 50%;" id="password" type="password" class="box-style" required>
                         <br />
                         <br />
                         <label>User Role</label>
                         <br />
-                        <select class="box-style" id="role" style="width:50%;" name="role">
+                        <select class="box-style" id="role" style="width:50%;" name="role" required>
                             <option value="">--select--</option>
                             <option value="Employee">Employee</option>
                             <option value="HR">HR</option>
@@ -76,10 +76,18 @@
                             }
                             if (allFielsAreOk == 1) {
                                 if (role === "Employee") {
-                                    window.location.href = "home.html";
+                                    if (userName == "renis@mail.com" && password == "Tomjson1") {
+                                        window.location.href = "home.html";
+                                    } else {
+                                        alert("Invalid username or password");
+                                    }
                                 }
                                 else if (role === "HR") {
-                                    window.location.href = "hrpage.html";
+                                    if (userName == "casi@mail.com" && password == "Tomjson1") {
+                                        window.location.href = "hrpage.html";
+                                    } else {
+                                        alert("Invalid username or password");
+                                    }
                                 }
                             }
                         }
