@@ -2,9 +2,11 @@
     width: 100%;
     margin-top: 10px;
     margin-left: 0px;
-    padding-left: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     border: 2px solid rgb(195,195,195);
     border-radius: 10px 10px;
+    display: inline-block;
 }
 .home-content{
     width : 100%;
@@ -19,4 +21,13 @@
 .pre-scrollable1 {
     max-height: 550px;
     overflow-y: scroll;
+}
+.title-align{
+    float: left;
+}
+
+.edit-profile{
+    float: right;
+    text-decoration: none;
+    font-size: 16px;
 }

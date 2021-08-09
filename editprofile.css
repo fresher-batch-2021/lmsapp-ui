@@ -1,0 +1,9 @@
+.title-edit{
+    margin: 0 auto;
+    /* box-sizing: border-box; */
+    border: 2px solid rgb(195,195,195);
+    border-radius: 10px 10px;
+    display: block;
+    width: 25%;
+    height: 250px;
+}
