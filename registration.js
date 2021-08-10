@@ -10,9 +10,9 @@ function registration() {
     const jsonObj = {
         "name": name,
         "empId": empId,
-        "teamName": teamName,
+        "role": teamName,
         "mobileNumber": mobileNumber,
-        "emailAddress": emailAddress,
+        "email": emailAddress,
         "password": password
     }
 
@@ -63,7 +63,26 @@ function registration() {
         allFieldsAreOk = 1;
     }
     if (passCheck == 1) {
-        alert("Registration Success !!!");
-        window.location.href = "index.html";
+        console.log("called");
+        let url = "https://product-mock-api.herokuapp.com/lmsapp/api/v1/auth/register";
+        let formData = {
+            name: name,
+            empId: empId,
+            role: teamName,
+            mobileNumber: mobileNumber,
+            email: emailAddress,
+            password: password
+        }
+        axios.post(url, formData).then(res => {
+            let data = res.data;
+            console.log("response : ", data);
+            alert("Successffully Login");
+            window.location.href = "index.html";
+        }).catch(err => {
+            let errorMessage = err.response.data.errorMessage;
+            console.error(errorMessage);
+            alert("Error-" + errorMessage);
+        });
+
     }
 }

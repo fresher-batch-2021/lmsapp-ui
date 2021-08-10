@@ -31,7 +31,7 @@ const historyDetails = [
 
 let content = "";
 for(let hist of historyDetails){
-    content = content + `<tr><td>${hist.sno}</td><td>${hist.date}</td><td>${hist.type}</td><td>${hist.reason}</td><td>${hist.status}</td></tr>`;
+    content = content + `<tr><td>${hist.sno}</td><td>${hist.date}</td><td>${hist.type}</td><td>${hist.reason}</td><td>${hist.status}</td><td> <a href="editleaveform.html?id=${hist.sno}">EDIT</a></td></tr>`;
 }
 console.log(content);
 document.querySelector("#history-details").innerHTML = content;

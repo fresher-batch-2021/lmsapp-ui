@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit leave Form</title>
+    <link rel="stylesheet" href="applyleave.css">
+    <link rel="stylesheet" href="row_col.css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-sm-2">
+            <header id="header"></header>
+        </div>
+        <div class="col-sm-8">
+            <div class="leave-title">
+                <h2><strong>EDIT LEAVE FORM</strong></h2>
+            </div>
+            <div class="leave-content">
+                <form onsubmit="editLeaveForm()" id = "edit-leave">
+
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <footer id = "footer"></footer>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $("#header").load("header.html");
+    </script>
+    <script>
+        $("#footer").load("footer.html");
+    </script>
+    <script src="editleaveform.js"></script>
+</body>
+
+</html>

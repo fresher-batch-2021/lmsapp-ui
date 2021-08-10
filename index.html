@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="row_col.css">
     <link rel="stylesheet" href="login.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>LMS - LOGIN</title>
 </head>
 
@@ -75,20 +78,23 @@
                                 allFielsAreOk = 1;
                             }
                             if (allFielsAreOk == 1) {
-                                if (role === "Employee") {
-                                    if (userName == "renis@mail.com" && password == "Tomjson1") {
-                                        window.location.href = "home.html";
-                                    } else {
-                                        alert("Invalid username or password");
-                                    }
+                                console.log("called");
+                                let url = "https://product-mock-api.herokuapp.com/lmsapp/api/v1/auth/login";
+                                let formData = {
+                                    email: userName,
+                                    password: password
                                 }
-                                else if (role === "HR") {
-                                    if (userName == "casi@mail.com" && password == "Tomjson1") {
-                                        window.location.href = "hrpage.html";
-                                    } else {
-                                        alert("Invalid username or password");
-                                    }
-                                }
+
+                                axios.post(url, formData).then(res => {
+                                    let data = res.data;
+                                    console.log(data);
+                                    alert("Successffully Login");
+                                    window,location.href = "home.html";
+                                }).catch(err => {
+                                    let errorMessage = err.response.data.errorMessage;
+                                    console.error(errorMessage);
+                                    alert("Error-" + errorMessage);
+                                });
                             }
                         }
                     </script>
