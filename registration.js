@@ -76,7 +76,7 @@ function registration() {
         axios.post(url, formData).then(res => {
             let data = res.data;
             console.log("response : ", data);
-            alert("Successffully Login");
+            alert("Successffully Registered");
             window.location.href = "index.html";
         }).catch(err => {
             let errorMessage = err.response.data.errorMessage;

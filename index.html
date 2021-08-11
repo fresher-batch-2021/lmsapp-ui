@@ -16,11 +16,9 @@
 <body>
     <div class="div">
         <div class="div1">
-            <center>
-                <h1>
+                <h1 style="text-align: center;">
                     <em>LMS - APP</em>
                 </h1>
-            </center>
             <div class="row">
                 <div class="col-sm-12" style="padding-left : 180px; padding-top : 10px;">
                     <h2 style="padding-left : 60px;">Sign In..</h2>
@@ -88,8 +86,17 @@
                                 axios.post(url, formData).then(res => {
                                     let data = res.data;
                                     console.log(data);
-                                    alert("Successffully Login");
-                                    window,location.href = "home.html";
+                                    if(data.role === "employee" && loginObj.role === "Employee"){
+                                        alert("Successffully Login");
+                                        window.location.href = "home.html";
+                                    }else if(data.role === "hr" && loginObj.role === "HR"){
+                                        alert("Successffully Login");
+                                        window.location.href = "hrpage.html";
+                                    }else{
+                                        alert("Invalid Role defined")
+                                    }
+
+
                                 }).catch(err => {
                                     let errorMessage = err.response.data.errorMessage;
                                     console.error(errorMessage);
