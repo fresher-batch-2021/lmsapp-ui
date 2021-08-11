@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,6 @@
     <link rel="stylesheet" href="status.css">
     <link rel="stylesheet" href="row_col.css">
 </head>
-
 <body>
     <div class="row">
         <div class="col-sm-2">
@@ -27,51 +25,8 @@
             </div>
             <div class="status-content pre-scrollable1">
                 <br/>
-                <table aria-describedby="mydesc">
-                    <tr>
-                        <th scope="col">###</th>
-                        <th scope="col">Month</th>
-                        <th scope="col">Year</th>
-                        <th scope="col">Sick Leave</th>
-                        <th scope="col">Casual Leave</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>AUG</td>
-                        <td>2021 </td>
-                        <td>2</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>SEP</td>
-                        <td>2021</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>OCT</td>
-                        <td>2021</td>
-                        <td>1</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>NOV</td>
-                        <td>2021</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>DEC</td>
-                        <td>2021</td>
-                        <td>1</td>
-                        <td>0</td>
-                    </tr>
-                </table>
-            </div>
+                <div id = "availableLeaves"></div>
+            </div>         
         </div>
         <div class = "col-sm-2">
             <footer id="footer"></footer>
@@ -84,6 +39,6 @@
     <script>
         $("#footer").load("footer.html");
     </script>
+    <script src="status.js"></script>
 </body>
-
 </html>
