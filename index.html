@@ -88,9 +88,11 @@
                                     console.log(data);
                                     if(data.role === "employee" && loginObj.role === "Employee"){
                                         alert("Successffully Login");
+                                        localStorage.setItem("LOGGED_IN_USER",JSON.stringify(res.data));
                                         window.location.href = "home.html";
                                     }else if(data.role === "hr" && loginObj.role === "HR"){
                                         alert("Successffully Login");
+                                        localStorage.setItem("LOGGED_IN_USER",JSON.stringify(res.data));
                                         window.location.href = "hrpage.html";
                                     }else{
                                         alert("Invalid Role defined")
