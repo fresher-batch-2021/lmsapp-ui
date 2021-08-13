@@ -1,11 +1,8 @@
-availableCounts = [
-    {
-        total: 12,
-        sickLeave: 8,
-        casualLeave: 4
-    }
-];
-
+let availableCounts = [];
+let leaveCounts = localStorage.getItem("availableLeave");
+availableCounts = leaveCounts != null ? JSON.parse(leaveCounts):null;
+console.log(leaveCounts);
+console.log(availableCounts);
 let content = "";
 for (let counts of availableCounts) {
     content = content + `
@@ -17,6 +14,9 @@ for (let counts of availableCounts) {
                 </div>
                 <div class = "content">
                     Available Casual Leave : ${counts.casualLeave} days
+                </div>
+                <div class = "content">
+                    Available Earned Leave : ${counts.earnedLeave} days
                 </div>
 `;
 }

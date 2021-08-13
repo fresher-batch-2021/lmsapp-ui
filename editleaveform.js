@@ -100,7 +100,7 @@ for (let hist of historyDetails) {
                             <div class="col-sm-2"></div>
                             <div class="col-sm-8">
                                 <input type="submit" style="width : 100%; height : 40px; font-size : 16px;"
-                                    value="Apply" class="btn1-style">
+                                    value="UPDATE" class="btn1-style">
                                 <div class="col-sm-2"></div>
                             </div>
                         </div>

@@ -16,38 +16,30 @@
 <body>
     <div class="div">
         <div class="div1">
-                <h1 style="text-align: center;">
-                    <em>LMS - APP</em>
-                </h1>
+            <h1 style="text-align: center;">
+                <em>LMS - APP</em>
+            </h1>
             <div class="row">
                 <div class="col-sm-12" style="padding-left : 180px; padding-top : 10px;">
                     <h2 style="padding-left : 60px;">Sign In..</h2>
                     <form onsubmit="login()">
                         <label for="username">Username</label>
-                        <br />
-                        <input style=" width : 50%;" id="userName" type="text" class="box-style" required>
-                        <br />
-                        <br />
+                        <input style=" width : 50%;" id="userName" name="loginForm" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                            class="box-style" required>
                         <label for="password">Password</label>
-                        <br />
-                        <input style=" width : 50%;" id="password" type="password" class="box-style" required>
-                        <br />
-                        <br />
+                        <input style=" width : 50%;" id="password" pattern="" name="loginForm" type="password"
+                            class="box-style" required>
                         <label>User Role</label>
-                        <br />
-                        <select class="box-style" id="role" style="width:50%;" name="role" required>
+                        <select class="box-style" style="width:50%;" id="role" name="loginForm" required>
                             <option value="">--select--</option>
                             <option value="Employee">Employee</option>
                             <option value="HR">HR</option>
                         </select>
-                        <br />
-                        <br />
                         <div style="padding-left : 70px;">
                             <input style=" width : 25%;" type="submit" class="btn btn-style">
-                            <br />
                         </div>
                         <br />
-                        <a href="registration.html" style="padding-left : 35px;">New User - Register here!</a>
+                        <a href="registration.html" style="padding-left : 30px;">New User - Register here!</a>
                     </form>
                     <script>
                         function login() {
@@ -86,15 +78,16 @@
                                 axios.post(url, formData).then(res => {
                                     let data = res.data;
                                     console.log(data);
-                                    if(data.role === "employee" && loginObj.role === "Employee"){
+                                    if (data.role === "employee" && loginObj.role === "Employee") {
                                         alert("Successffully Login");
-                                        localStorage.setItem("LOGGED_IN_USER",JSON.stringify(res.data));
+                                        localStorage.setItem("LOGGED_IN_USER", JSON.stringify(res.data));
+                                        updateLocal();
                                         window.location.href = "home.html";
-                                    }else if(data.role === "hr" && loginObj.role === "HR"){
+                                    } else if (data.role === "hr" && loginObj.role === "HR") {
                                         alert("Successffully Login");
-                                        localStorage.setItem("LOGGED_IN_USER",JSON.stringify(res.data));
+                                        localStorage.setItem("LOGGED_IN_USER", JSON.stringify(res.data));
                                         window.location.href = "hrpage.html";
-                                    }else{
+                                    } else {
                                         alert("Invalid Role defined")
                                     }
 
@@ -106,6 +99,18 @@
                                 });
                             }
                         }
+                        function updateLocal() {
+                            let availableLeave = [
+                                {
+                                    casualLeave: 6,
+                                    sickLeave: 6,
+                                    earnedLeave: 6,
+                                    total: 18
+                                }
+                            ];
+                            localStorage.setItem("availableLeave", JSON.stringify(availableLeave));
+                        }
+
                     </script>
                 </div>
             </div>

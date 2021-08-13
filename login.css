@@ -46,12 +46,19 @@ a{
     font-style: initial;
 }
 
+label{
+    display: block;
+    margin-bottom: 5px;
+}
+
 .box-style{
     width : 250px;
     height : 30px;
     font-size : 16px;
     border: 1px solid lightblue;
     border-radius: 8px 8px;
+    display: block;
+    margin-bottom: 20px;
 }
 .btn-style{
     width : 150px;

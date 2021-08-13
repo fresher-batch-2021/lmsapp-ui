@@ -15,6 +15,14 @@ const form = [
         leaveType: "Casual Leave",
         reason: "Function",
     },
+    {
+        name: "Issac",
+        employeeId: "2248",
+        team: "DataZence",
+        leaveDays: "16/08/2021",
+        leaveType: "Sick Leave",
+        reason: "Headache",
+    }
 ];
 let content = "";
 for (let formObj of form) {
