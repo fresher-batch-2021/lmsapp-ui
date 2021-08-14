@@ -28,14 +28,14 @@ function registration() {
     else if (teamName == null || teamName == "" || teamName.trim() == "") {
         alert("Enter valid Role");
     }
-    else if (mobileNumber == null || mobileNumber == "" || mobileNumber.trim() == "") {
+    else if (mobileNumber == null || mobileNumber == "" || mobileNumber.trim() == "" || mobileNumber.length > 10 || mobileNumber.length < 10) {
         alert("Enter valid Mobile number");
     }
     else if (emailAddress == null || emailAddress == "" || emailAddress.trim() == "") {
         alert("Enter valid Email Address");
     }
     else if (password == null || password == "" || password.trim() == "" || password.length > 8 || password.length < 8) {
-        alert("Must be 8 letters");
+        alert("Password Must be 8 letters");
     }
     else if (password != null) {
         let numCheck = 0;
@@ -57,7 +57,7 @@ function registration() {
             passCheck = 1;
         }
         else {
-            alert("Password must contains Atleast 1 Number, 1 Upper Case, 1 Lower Case");
+            alert("Password must be 8 Characters & contains Atleast 1 Number, 1 Upper Case, 1 Lower Case");
         }
     } else {
         allFieldsAreOk = 1;
