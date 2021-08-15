@@ -52,3 +52,11 @@
     width : 150px;
     height : 30px;
 }
+
+.leave-analysis{
+    float: right;
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(2, 32, 32);
+    padding-right: 50px;
+}

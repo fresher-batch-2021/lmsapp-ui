@@ -1,0 +1,9 @@
+.leave-analysis{
+    margin: 0 auto;
+    border: 2px solid rgb(195,195,195);
+    border-radius: 10px 10px;
+    display: block;
+    width: 40%;
+    height: 350px;
+    padding: 30px;
+}
