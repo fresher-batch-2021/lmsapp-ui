@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +7,26 @@
     <title>HR - page</title>
     <link rel="stylesheet" href="hrpage.css">
     <link rel="stylesheet" href="row_col.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
+    <header id="header"></header>
     <div class="hrpage-title">
-        <h2>Leave Applications <a href="leaveAnalysis.html" class = "leave-analysis">Leave Analysis</a></h2>
-        
+        <h2>Leave Applications</h2>
+
     </div>
     <div class="hrpage-content">
-        <div id = "application-forms">
+        <div id="application-forms">
         </div>
     </div>
     <script src="js/jquery.min.js"></script>
-    <script src = "hrforms.js"></script>
+    <script>
+        $("#header").load("hrm_header.html");
+    </script>
+    <script src="hrforms.js"></script>
 </body>
 
 </html>

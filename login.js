@@ -34,7 +34,7 @@ function login() {
                 email: userName,
                 password: password
             },
-            fields: ["_id", "role", "empId"] 
+            fields: ["_id","_rev","name","role", "empId"] 
         };
 
         axios.post(url, formData, { headers: { 'Authorization': basicAuth } }).then(res => {
@@ -43,13 +43,12 @@ function login() {
             console.log(data.docs[0].role);
             if (data.docs[0].role === "employee" && loginObj.role === "Employee") {
                 alert("Successffully Login");
-                localStorage.setItem("LOGGED_IN_USER", JSON.stringify(res.data));
-                updateLocal();
+                localStorage.setItem("LOGGED_IN_USER", JSON.stringify(data.docs));
                 window.location.href = "home.html";
             } else if (data.docs[0].role === "hr" && loginObj.role === "HR") {
                 alert("Successffully Login");
-                localStorage.setItem("LOGGED_IN_USER", JSON.stringify(res.data));
-                window.location.href = "hrpage.html";
+                localStorage.setItem("LOGGED_IN_USER", JSON.stringify(data.docs));
+                window.location.href = "hrhome.html";
             } else {
                 alert("Invalid Role defined");
             }

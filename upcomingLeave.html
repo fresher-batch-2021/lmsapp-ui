@@ -23,7 +23,7 @@
 
             <div class="upcoming-content">
                 <form>
-                    <select id="month">
+                    <select class = "select-style" id="month">
                         <option value="01">JAN</option>
                         <option value="02">FEB</option>
                         <option value="03">MAR</option>
@@ -37,15 +37,15 @@
                         <option value="11">NOV</option>
                         <option value="12">DEC</option>
                     </select>
-                    <input type="submit" onclick="currentMonth()">
+                    <input class = "btnn-style" type="submit" value="Filter" onclick="currentMonth()">
                 </form>
 
                 <table aria-describedby="mydesc">
-                    <td>
+                    <tr>
                     <th scope="col">DATE</th>
                     <th scope="col">DAY</th>
                     <th scope="col">DESCRIPTION</th>
-                    </td>
+                    </tr>
                     <tbody id="content"></tbody>
                 </table>
             </div>

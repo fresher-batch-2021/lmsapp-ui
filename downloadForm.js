@@ -46,27 +46,23 @@ const historyDetails = [
      var csv = 'Name,Profession\n';
      
      for(let leaveDetail of historyDetails){
-         csv += "EMPID".join(',') + leaveDetail.sno;
+         csv += "EMPID"+',' + leaveDetail.sno;
          csv += "\n";
-         csv += "From Date".join(',') + leaveDetail.fromDate;
+         csv += "From Date"+','+leaveDetail.fromDate;
          csv += "\n";
-         csv += "To Date".join(',') + leaveDetail.toDate;
+         csv += "To Date"+','+ leaveDetail.toDate;
          csv += "\n";
-         csv += "EMPID".join(',') + leaveDetail.sno;
+         csv += "Leave Type"+','+ leaveDetail.type;
          csv += "\n";
-         csv += "EMPID".join(',') + leaveDetail.sno;
+         csv += "Reason" +','+ leaveDetail.reason;
          csv += "\n";
-         csv += "EMPID".join(',') + leaveDetail.sno;
+         csv += "Status" +','+ leaveDetail.status;
      }
-       
-    //  csvFileData.forEach(function(row) {  
-    //          csv += row.join(',');  
-    //          csv += "\n";  
-    //  });    
+         
      document.write(csv);   
      var hiddenElement = document.createElement('a');  
      hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);  
      hiddenElement.target = '_blank';  
      hiddenElement.download = 'leaveform.csv';  
      hiddenElement.click();  
- }  
+}  

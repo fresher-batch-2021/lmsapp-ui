@@ -88,7 +88,7 @@
         <script>
             let userStr = localStorage.getItem("LOGGED_IN_USER");
             let user = userStr != null ? JSON.parse(userStr):null;
-            console.log("Name : ", user.name);
+            console.log("Name : ", user[0].name);
         </script>
     </div>
 </body>

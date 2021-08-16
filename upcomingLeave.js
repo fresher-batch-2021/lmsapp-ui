@@ -134,13 +134,18 @@ function currentMonth(){
     event.preventDefault();
     let content = "";
     let mm = document.querySelector("#month").value;
+    let val = 0;
     for(let leave of array){
         let leaveDate = leave.date;
         leaveDate = leaveDate.split("-");
         console.log(leaveDate);
         if(leaveDate[1] == mm){
+            val ++;
             content = content + `<tr><td>${leave.date}</td><td>${leave.day}</td><td>${leave.status}</td></tr>`;
         }
+    }
+    if (val == 0){
+        content = content + `<tr>No Leaves Found</tr>`;
     }
     document.querySelector("#content").innerHTML = content;
 }
