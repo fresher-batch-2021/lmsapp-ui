@@ -1,3 +1,4 @@
+
 let array = [
     {
         date : "2021-01-01",
@@ -115,21 +116,22 @@ console.log(dd);
 console.log(mm);
 console.log(yyyy);
 
-function curentMonth(){
-    let content = "";
-    
-    for(let leave of array){
-        let leaveDate = leave.date;
-        leaveDate = leaveDate.split("-");
-        console.log(leaveDate);
-        if(leaveDate[1] == mm){
-            content = content + `<tr><td>${leave.date}</td><td>${leave.day}</td><td>${leave.status}</td></tr>`;
-        }
-    }
-    document.querySelector("#content").innerHTML = content;
-}
+// function current(mm){
+//     event.preventDefault();
+//     let content = "";
+//     for(let leave of array){
+//         let leaveDate = leave.date;
+//         leaveDate = leaveDate.split("-");
+//         console.log(leaveDate);
+//         if(leaveDate[1] == mm){
+//             content = content + `<tr><td>${leave.date}</td><td>${leave.day}</td><td>${leave.status}</td></tr>`;
+//         }
+//     }
+//     document.querySelector("#content").innerHTML = content;
+// }
 
-function curent(){
+function currentMonth(){
+    event.preventDefault();
     let content = "";
     let mm = document.querySelector("#month").value;
     for(let leave of array){
