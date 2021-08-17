@@ -41,7 +41,7 @@ function registration() {
         let numCheck = 0;
         let charCheck = 0;
         let capsCheck = 0;
-        for (i = 0; i < password.length; i++) {
+        for (let i = 0; i < password.length; i++) {
             if (password[i] >= "A" && password[i] <= "Z") {
                 capsCheck = 1;
             }
@@ -62,12 +62,7 @@ function registration() {
     } else {
         allFieldsAreOk = 1;
     }
-    if (passCheck == 1) {
-        console.log("called");
-        const dbUsername = "apikey-v2-112mfjkmfy0vbc1cwfx61kckru87k40qr1lnztxypzbg";
-        const dbPassword = "28cadd4e1a6e2edf67df43007bae28dc";
-        const basicAuth = "Basic " + btoa(dbUsername+ ":" +dbPassword);
-        let url = "https://9c34f728-220d-4b98-91c8-b24ae354ff67-bluemix.cloudantnosqldb.appdomain.cloud/lms-users";
+    if (passCheck == 1 && allFieldsAreOk == 1) {
         let formData = {
             name: name,
             empId: empId,

@@ -108,27 +108,13 @@ let array = [
 ];
 let today = new Date();
 let dd = String(today.getDate()).padStart(2, '0');
-let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+let mo = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 let yyyy = today.getFullYear();
 
 console.log(today);
 console.log(dd);
-console.log(mm);
+console.log(mo);
 console.log(yyyy);
-
-// function current(mm){
-//     event.preventDefault();
-//     let content = "";
-//     for(let leave of array){
-//         let leaveDate = leave.date;
-//         leaveDate = leaveDate.split("-");
-//         console.log(leaveDate);
-//         if(leaveDate[1] == mm){
-//             content = content + `<tr><td>${leave.date}</td><td>${leave.day}</td><td>${leave.status}</td></tr>`;
-//         }
-//     }
-//     document.querySelector("#content").innerHTML = content;
-// }
 
 function currentMonth(){
     event.preventDefault();

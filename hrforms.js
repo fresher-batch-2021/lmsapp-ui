@@ -29,7 +29,7 @@ const dbUsername = "apikey-v2-112mfjkmfy0vbc1cwfx61kckru87k40qr1lnztxypzbg";
 const dbPassword = "28cadd4e1a6e2edf67df43007bae28dc";
 const basicAuth = "Basic " + btoa(dbUsername + ":" + dbPassword);
 let url = "https://9c34f728-220d-4b98-91c8-b24ae354ff67-bluemix.cloudantnosqldb.appdomain.cloud/leaveforms/_all_docs?include_docs=true";
-//let forms =[];
+
 axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
     let data = res.data;
     console.log("response : ", data);
@@ -51,8 +51,6 @@ function render(forms) {
     for (let formObj of forms) {
         console.log("data : ", formObj.doc.status);
         if (formObj.doc.status === "Pending") {
-            //content = content + "<tr><td>"+ formObj.name +"</td><td>" + formObj.name + "</td><td>" + formObj.leaveDays + "</td></tr>";
-            //content = content + `<tr><td>${formObj.name} ${formObj.employeeId}</td><td>${formObj.leaveDays}</td><td>${formObj.reason}</td></tr>`;
             content = content + `<div class="application-form">
         <div class="row">
             <div class="col-sm-4">
@@ -79,9 +77,6 @@ function render(forms) {
 }
 
 function statusUpdate(id,rev,eid,empid,fromDate, toDate, leaveType, reason, status) {
-    const dbUsername = "apikey-v2-112mfjkmfy0vbc1cwfx61kckru87k40qr1lnztxypzbg";
-    const dbPassword = "28cadd4e1a6e2edf67df43007bae28dc";
-    const basicAuth = "Basic " + btoa(dbUsername + ":" + dbPassword);
     const formData = {
         "id" : eid,
         "employeeId" : empid,
@@ -92,9 +87,9 @@ function statusUpdate(id,rev,eid,empid,fromDate, toDate, leaveType, reason, stat
         "status" : status
     }
 
-    let url = "https://9c34f728-220d-4b98-91c8-b24ae354ff67-bluemix.cloudantnosqldb.appdomain.cloud/leaveforms/"+id+"?rev="+rev;
-    //let forms =[];
-    axios.put(url,formData, { headers: { 'Authorization': basicAuth } }).then(res => {
+    let _url = "https://9c34f728-220d-4b98-91c8-b24ae354ff67-bluemix.cloudantnosqldb.appdomain.cloud/leaveforms/"+id+"?rev="+rev;
+
+    axios.put(_url,formData, { headers: { 'Authorization': basicAuth } }).then(res => {
         let data = res.data;
         console.log("response : ", data);
         console.log("table list :", forms);

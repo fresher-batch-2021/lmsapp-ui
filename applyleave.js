@@ -1,6 +1,5 @@
 function leaveForm() {
     event.preventDefault();
-    const employeeId = document.querySelector("#employeeId").value;
     const fromDate = document.querySelector("#fromDate").value;
     const toDate = document.querySelector("#toDate").value;
     const leaveType = document.querySelector("#type").value;
@@ -29,13 +28,12 @@ function leaveForm() {
         console.log("response : ", data);
         alert("Applied Succesfully");
         console.log("success");
-        window.location.href = "history.html";
+        window.location.href = "/history";
     }).catch(err => {
-        let errorMessage = err.response.data.errorMessage;
-        console.error(errorMessage);
+        //let errorMessage = err.response.data.errorMessage;
+        //console.error(errorMessage);
         console.log("failed");
-        alert("Error-" + errorMessage);
+        alert("Error");
     });
     console.log(leaveFormObj);
-    //window.location.href = "history.html";
 }

@@ -53,8 +53,7 @@ function login() {
                 alert("Invalid Role defined");
             }
         }).catch(err => {
-            //let errorMessage = err.response.data.errorMessage;
-            //console.error(errorMessage);
+            
             alert("Error- Invalid Credentials");
         });
     }
